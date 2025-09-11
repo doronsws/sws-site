@@ -1,0 +1,35 @@
+
+/* KPI band — light, elegant */
+.kpi-band{
+  background: linear-gradient(180deg, #fafafa 0%, #ffffff 100%);
+  color:#111;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+.kpi-item{
+  background: linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.01));
+  border: 1px solid rgba(0,0,0,0.06);
+  padding: 24px 16px;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.kpi-item:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.08);
+  border-color: rgba(227, 35, 35, 0.35); /* brand red accent */
+}
+.kpi-icon{
+  color:#e53935; /* brand accent on light */
+  margin-bottom: .25rem;
+}
+.kpi-number{
+  font-weight: 900;
+  font-size: clamp(28px, 5vw, 44px);
+  letter-spacing: .5px;
+  line-height: 1.1;
+  color:#111;
+}
+.kpi-label{
+  font-size: 15px;
+  color:#666;
+}

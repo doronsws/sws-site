@@ -1,0 +1,249 @@
+/* Minimal service hero fix (no design change) */
+.service-hero{ padding-top: 104px; }
+@media (max-width: 991.98px){ .service-hero{ padding-top: 88px; } }
+.service-hero h1{ font-weight: 800; line-height:1.1; margin-bottom:.35rem; }
+.service-hero p.lead{ opacity:.95; }
+
+
+/* --- MODERN HERO (services only) --- */
+.service-hero{
+  position: relative;
+  background: linear-gradient(180deg,#0f0f10 0%,#161718 100%);
+  color:#fff;
+  padding: 108px 0 58px; /* keeps clear of fixed navbar */
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+@media (max-width:991.98px){ .service-hero{ padding: 92px 0 46px; } }
+
+/* Center the copy and keep it tight */
+.service-hero > .container{
+  min-height: 220px;
+  display:flex; align-items:center; justify-content:center;
+  flex-direction:column; text-align:center;
+  gap:.35rem;
+}
+
+/* Modern type scale */
+.service-hero h1{
+  margin:0;
+  font-weight:900;
+  font-size: clamp(32px, 4.6vw, 56px);
+  line-height:1.06;
+  letter-spacing:.3px;
+  text-shadow:0 2px 12px rgba(0,0,0,.40);
+}
+.service-hero p.lead{
+  margin:0;
+  font-size: clamp(15px, 1.35vw, 19px);
+  opacity:.92;
+}
+
+/* Hide any background watermark/backdrop titles that some pages include */
+.service-hero .bg-title,
+.service-hero .watermark,
+.service-hero .hero-bg,
+.service-hero .hero-watermark,
+.service-hero .display-1.opacity-10,
+.service-hero .display-1.opacity-25,
+.service-hero .display-2.opacity-10,
+.service-hero .display-2.opacity-25,
+.service-hero h1.bg-title,
+.service-hero [class*="watermark"],
+.service-hero [class*="bg-title"]{ display:none !important; }
+
+
+/* --- ELEGANT HEADLINE upgrade --- */
+.service-hero h1{
+  position:relative;
+  margin:0;
+  color: rgba(255,255,255,.98);
+  font-weight:900;
+  font-size: clamp(34px, 4.8vw, 58px);
+  line-height:1.08;
+  letter-spacing:.2px;
+  text-shadow: 0 1px 10px rgba(0,0,0,.35);
+}
+.service-hero h1::after{
+  content:"";
+  display:block;
+  width:min(180px, 26vw);
+  height:3px;
+  margin:.65rem auto 0;
+  border-radius:999px;
+  background:linear-gradient(90deg,#ff2d2d 0%, #ff6b6b 100%);
+  opacity:.95;
+}
+.service-hero p.lead{
+  color: rgba(255,255,255,.85);
+  font-weight:500;
+}
+
+/* Nuke any watermark/duplicate big titles inside hero */
+.service-hero .bg-title,
+.service-hero .watermark,
+.service-hero .hero-bg,
+.service-hero .hero-watermark,
+.service-hero .display-1,
+.service-hero .display-2,
+.service-hero .opacity-10,
+.service-hero .opacity-25,
+.service-hero .opacity-50 { display:none !important; }
+
+
+/* --- Kill mirrored/reflection text under the HERO title --- */
+.service-hero h1::before{ content:none !important; display:none !important; }
+.service-hero::before{ content:none !important; display:none !important; }
+.service-hero [class*="reflect"],
+.service-hero [class*="mirror"],
+.service-hero .reflected,
+.service-hero .reflection,
+.service-hero .mirror-text { display:none !important; }
+.service-hero [style*="scaleX(-1)"],
+.service-hero [style*="scaleY(-1)"],
+.service-hero [style*="rotateY(180deg)"],
+.service-hero [style*="rotateX(180deg)"]{ display:none !important; }
+
+
+/* --- FORCE disable all hero pseudo-element reflections --- */
+.service-hero::after{ content:none !important; display:none !important; }
+.service-hero *::before,
+.service-hero *::after{
+  transform:none !important;
+  filter:none !important;
+  mix-blend-mode:normal !important;
+}
+
+
+/* --- ABSOLUTE KILL for duplicate pseudo-element text in HERO --- */
+.service-hero *::before,
+.service-hero *::after{
+  content: none !important;
+  display: none !important;
+  transform: none !important;
+  filter: none !important;
+  mix-blend-mode: normal !important;
+}
+
+
+/* --- Ensure a single, crisp HERO title --- */
+.service-hero h1{
+  text-shadow: none !important;
+  -webkit-text-stroke: 0 !important;
+  filter: none !important;
+  direction: rtl !important;
+}
+
+/* --- One-layer rule: show ONLY the H1 and one lead paragraph in HERO --- */
+.service-hero .container > :not(h1):not(p){ display:none !important; }
+.service-hero h1 > *{ display:none !important; } /* ensure no nested span duplicates */
+
+/* === Services HERO unified style (white text) === */
+.service-hero h1{ color:#fff !important; text-shadow:none !important; -webkit-text-stroke:0 !important; }
+.service-hero p{ color:#e9ecef !important; }
+.service-hero, .service-hero .container{ color:#fff !important; }
+.service-hero .bg-title, .service-hero .watermark, .service-hero .display-1, 
+.service-hero .display-2, .service-hero .text-white-50 { display:none !important; }
+/* keep only title + one paragraph */
+.service-hero .container > :not(h1):not(p){ display:none !important; }
+.service-hero h1 > *{ display:none !important; }
+
+/* Safety net: hide common watermark headings */
+.service-hero .bg-title,
+.service-hero .title-bg,
+.service-hero .hero-title,
+.service-hero .watermark,
+.service-hero [class*="display-"],
+.service-hero [class*="opacity-"]{ display:none !important; }
+
+/* === Unified services HERO — clean, bold, SWS colors === */
+.service-hero{
+  background:#0f0f10;
+  padding: 84px 0 96px;
+}
+.service-hero .container{
+  text-align:center;
+}
+.service-hero h1{
+  color:#ffffff !important;
+  font-weight:800;
+  line-height:1.1;
+  /* fluid size, respects RTL */
+  font-size:clamp(28px, 4.2vw, 64px);
+  margin:0 auto;
+  display:inline-block;
+  padding-bottom:10px;
+  border-bottom:4px solid #e31b23; /* SWS red accent */
+  text-shadow:none !important;
+  -webkit-text-stroke:0 !important;
+  filter:none !important;
+  direction:rtl !important;
+}
+.service-hero p{
+  margin-top:16px;
+  color:#d7d7d7 !important;
+  font-size:clamp(16px, 1.6vw, 20px);
+}
+/* keep only title + one paragraph visible inside hero */
+.service-hero .container > :not(h1):not(p){ display:none !important; }
+.service-hero h1 > *{ display:none !important; }
+/* safety net against watermark classes */
+.service-hero .bg-title,
+.service-hero .title-bg,
+.service-hero .hero-title,
+.service-hero .watermark,
+.service-hero [class*="display-"],
+.service-hero [class*="opacity-"]{ display:none !important; }
+
+/* === Services HERO: white background, black title, red underline === */
+.service-hero{
+  background:#ffffff !important;
+  padding: 56px 0 64px !important;
+  border-bottom:1px solid #efefef;
+  color:#111 !important;
+}
+.service-hero .container{ text-align:center; }
+.service-hero h1{
+  color:#121212 !important;
+  font-weight:800;
+  line-height:1.1;
+  font-size:clamp(28px, 4.2vw, 60px);
+  margin:0 auto;
+  display:inline-block;
+  padding-bottom:12px;
+  border-bottom:4px solid #e31b23; /* SWS red */
+  text-shadow:none !important; -webkit-text-stroke:0 !important; filter:none !important;
+  direction:rtl !important;
+}
+.service-hero p{
+  margin-top:14px;
+  color:#444 !important;
+  font-size:clamp(16px, 1.6vw, 20px);
+}
+/* Keep only H1 + one P in hero */
+.service-hero .container > :not(h1):not(p){ display:none !important; }
+.service-hero h1 > *{ display:none !important; }
+/* Nuke common watermark classes */
+.service-hero .bg-title,
+.service-hero .title-bg,
+.service-hero .hero-title,
+.service-hero .watermark,
+.service-hero [class*="display-"],
+.service-hero [class*="opacity-"]{ display:none !important; }
+/* Remove any pseudo-element echoes */
+.service-hero *::before, .service-hero *::after{ content:none !important; display:none !important; }
+
+/* Hide any breadcrumb/tabs/links bars directly under the hero on edited pages */
+.service-hero + nav,
+.service-hero + .breadcrumbs,
+.service-hero + .breadcrumb,
+.service-hero + .page-nav,
+.service-hero + .subnav,
+.service-hero + .tabs-bar,
+.service-hero + .links-bar,
+.page-hero + nav,
+.page-hero + .breadcrumbs,
+.page-hero + .breadcrumb,
+.page-hero + .page-nav,
+.page-hero + .subnav,
+.page-hero + .tabs-bar,
+.page-hero + .links-bar { display:none !important; }

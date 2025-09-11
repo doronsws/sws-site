@@ -1,0 +1,31 @@
+
+/* --- Uniform service cards under HERO (CENTERED ICONS) --- */
+#services-cards .col-12 { display: flex; }
+#services-cards .service-card { display: block; width: 100%; }
+#services-cards .service-card .card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+/* Center icons in the visual middle of the card */
+#services-cards .service-card .card img.card-img-top,
+#services-cards .service-card .card img.card-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 55px;           /* mobile icon size */
+  width: auto;
+  max-width: 88%;
+  object-fit: contain;
+  object-position: center;
+  padding: 0;
+  pointer-events: none;
+}
+@media (min-width: 992px) {
+  #services-cards .service-card .card img.card-img-top,
+  #services-cards .service-card .card img.card-img { height: 65px; } /* desktop icon size */
+}
+#services-cards .service-card .card-body { margin-top: auto; position: relative; z-index: 2; }

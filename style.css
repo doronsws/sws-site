@@ -1,0 +1,234 @@
+:root{
+  --brand-red:#e30613;
+  --brand-dark:#111;
+}
+/* Topbar */
+.topbar{
+  background:#f7f7f9;
+  border-bottom:1px solid #eee;
+  position: sticky;
+  top:0;
+  z-index:1031;
+}
+.topbar a{ color:#111; text-decoration:none; }
+.topbar a:hover{ color:var(--brand-red); }
+
+/* Offset so navbar doesn't overlap after topbar */
+.nav-offset{ top:42px; }
+
+/* Navbar */
+.navbar .nav-link{ color:#333 !important; font-weight:500; }
+.navbar .nav-link:hover,.navbar .nav-link:focus{ color:var(--brand-red) !important; }
+.dropdown-menu{ text-align:right; right:0; left:auto; border-radius:10px; box-shadow:0 8px 20px rgba(0,0,0,.12); }
+.dropdown-item{ text-align:right; font-size:15px; }
+.dropdown-item:hover{ background-color:var(--brand-red); color:#fff; }
+
+/* HERO with video/image fallback */
+.hero{ min-height:100vh; overflow:hidden; position:relative; }
+.hero__bg{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.hero__img{ position:absolute; inset:0; background-size:cover; background-position:center; }
+.hero__overlay{ position:absolute; inset:0; background:linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)); }
+.hero .container{ z-index:1; }
+
+/* Floating WhatsApp */
+.whatsapp-float{ position:fixed; bottom:20px; left:20px; background:#25d366; border-radius:50%; padding:10px; box-shadow:0 2px 5px rgba(0,0,0,.3); z-index:1060; }
+.whatsapp-float img{ width:40px; height:40px; }
+
+/* Floating Contact Button */
+.contact-float{
+  position: fixed;
+  right: 20px;
+  bottom: 90px;
+  z-index: 1060;
+  border-radius: 999px;
+  padding: 12px 20px;
+  box-shadow: 0 6px 18px rgba(227,6,19,.35);
+}
+
+/* Modal RTL tweaks */
+.modal .form-label{ float: right; }
+.modal .btn-close{ margin-left: 0; margin-right: auto; }
+
+
+/* --- Hero polish --- */
+.hero .hero-logo{ height:56px; filter: drop-shadow(0 2px 6px rgba(0,0,0,.25)); }
+.hero-card{
+  max-width: 980px;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.18);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+.hero .lead{ color:#f1f1f1; }
+.hero-badges .badge-item{
+  color:#fff;
+  border:1px solid rgba(255,255,255,.35);
+  border-radius: 999px;
+  padding:.35rem .9rem;
+  font-weight:500;
+  backdrop-filter: blur(3px);
+}
+.quick-strip{
+  max-width: 1100px;
+  background: #fff;
+  color:#111;
+  border-radius: 12px;
+  padding: 12px 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.12);
+}
+
+/* Improve buttons look/feel */
+.btn-danger{ background-color:#e30613; border-color:#e30613; }
+.btn-danger:hover{ background-color:#c10510; border-color:#c10510; }
+.btn-outline-light{ border-color:#fff; color:#fff; }
+.btn-outline-light:hover{ background:#fff; color:#111; }
+
+
+/* Overlay service cards */
+a.service-card{ text-decoration:none; color:inherit; display:block; }
+.overlay-dark{ background: linear-gradient(180deg, rgba(0,0,0,0) 10%, rgba(0,0,0,.65) 70%); }
+.small-2lines{ font-size:.9rem; opacity:.9; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+.service-card .card-img{ transition: transform .35s ease; }
+.service-card:hover .card-img{ transform: scale(1.06); }
+.card .card-img-overlay{ transition: background .25s ease; }
+.service-card:hover .card-img-overlay{ background: linear-gradient(180deg, rgba(0,0,0,.05) 5%, rgba(0,0,0,.75) 75%); }
+#topSearch{ direction: rtl; min-width:200px; }
+
+
+/* Service cards grid under hero */
+a.service-card{ text-decoration:none; color:inherit; display:block; }
+.overlay-dark{ background: linear-gradient(180deg, rgba(0,0,0,0) 15%, rgba(0,0,0,.75) 85%); }
+.small-2lines{ font-size:.9rem; opacity:.9; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+.service-card .card-img{ transition: transform .35s ease; object-fit: cover; height:100%; }
+.service-card:hover .card-img{ transform: scale(1.08); }
+.card .card-img-overlay{ transition: background .25s ease; }
+.service-card:hover .card-img-overlay{ background: linear-gradient(180deg, rgba(0,0,0,.1) 20%, rgba(0,0,0,.9) 85%); }
+#services-cards .card{ min-height: 260px; }
+
+
+/* Clients strip (marquee) */
+.clients-strip { position: relative; background: #fff; }
+.clients-track { width: max-content; animation: scrollLeft 32s linear infinite; }
+.client-logo { height: 60px; opacity: .9; transition: transform .2s ease, opacity .2s ease; }
+.client-logo:hover { transform: scale(1.06); opacity: 1; }
+@keyframes scrollLeft { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+
+/* === Mobile polish (v26c) === */
+@media (max-width: 768px) {
+  /* Logo smaller on mobile */
+  .navbar-brand img { height: 40px !important; }
+
+  /* Hero text scale down a bit */
+  header h1.display-1, 
+  header h1.display-2, 
+  header h1.display-3 { font-size: 2.1rem; line-height: 1.2; }
+  header h1.display-4 { font-size: 1.9rem; line-height: 1.25; }
+  header p.lead { font-size: 1rem; }
+
+  /* Make CTA buttons stack full width nicely */
+  .hero-cta .btn, 
+  .btn-lg { width: 100%; margin-bottom: .5rem; }
+
+  /* Service cards tighter height */
+  #services-cards .card { min-height: 200px; }
+
+  /* Clients strip logos a bit smaller */
+  .client-logo { height: 44px; }
+
+  /* Reduce paddings around large sections to save space */
+  section.py-5 { padding-top: 2.25rem !important; padding-bottom: 2.25rem !important; }
+}
+
+@media (max-width: 576px) {
+  .navbar-brand img { height: 36px !important; }
+  header h1.display-1, 
+  header h1.display-2, 
+  header h1.display-3, 
+  header h1.display-4 { font-size: 1.7rem; }
+  .client-logo { height: 40px; }
+  .whatsapp-float { transform: scale(.9); }
+}
+
+/* Prevent accidental horizontal scroll on tiny screens */
+html, body { max-width: 100%; overflow-x: hidden; }
+
+
+/* === A11Y Step 1: Skip Link (minimal change) === */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  right: 10px;
+  background: #000;
+  color: #fff;
+  padding: .5rem .75rem;
+  z-index: 1100;
+  border-radius: .25rem;
+  text-decoration: none;
+}
+.skip-link:focus { top: 10px; outline: 2px solid #fff; }
+
+
+/* === A11Y Step 2: Focus-visible + Reduced Motion (CSS only) === */
+:focus-visible { outline: 3px solid #ff3b30; outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  .clients-track { animation: none !important; }
+  .service-card .card-img, .btn, a, .navbar-toggler { transition: none !important; }
+}
+
+
+/* === A11Y Step 6: Contrast hardening (CSS-only) === */
+/* Body text slightly darker for readability */
+body { color: #111; }
+
+/* Links on light background */
+a { color: #0a58ca; }          /* darker bootstrap primary */
+a:hover, a:focus { color: #084298; text-decoration: underline; }
+
+/* Navbar links on white navbar */
+.navbar-light .navbar-nav .nav-link { color: #212529; }
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link:focus { color: #0d6efd; }
+
+/* Buttons: ensure sufficient contrast */
+.btn-danger { background-color: #c82333; border-color: #b21f2d; color: #fff; }
+.btn-danger:hover, .btn-danger:focus { background-color: #a71d2a; border-color: #8f1723; color: #fff; }
+
+.btn-dark { background-color: #111; border-color: #0b0b0b; color: #fff; }
+.btn-dark:hover, .btn-dark:focus { background-color: #000; border-color: #000; color: #fff; }
+
+/* Text on image overlays: add light shadow for readability */
+.card-img-overlay h5, 
+.card-img-overlay .small, 
+header .display-*, 
+header .lead { text-shadow: 0 1px 2px rgba(0,0,0,.6); }
+
+/* Section headings contrast */
+h2, h3, h4, h5 { color: #111; }
+
+/* Small muted text: make a bit darker than default .text-muted */
+.text-muted { color: #60686f !important; }
+
+/* Inputs placeholder contrast a bit higher */
+::placeholder { color: #6b757d; opacity: 1; }
+
+/* Ensure overlay for hero remains strong (if using image) */
+.overlay-dark { background: linear-gradient(180deg, rgba(0,0,0,0) 8%, rgba(0,0,0,.82) 92%); }
+
+
+/* Subtle darker hover for navbar links */
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+  color: #111 !important;
+}
+
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus {
+  background-color: #f0f0f0 !important;
+  color: #111 !important;
+}
+

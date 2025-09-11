@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="he">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>ש.א.ש – שירותי אבטחה ושמירה</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/><link href="assets/css/navbar-tidy.css" rel="stylesheet"/><link href="assets/css/whatsapp-icon.css" rel="stylesheet"/><link href="assets/css/kpi-band.css" rel="stylesheet"/><link href="assets/css/uniform-cards.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+<a class="skip-link" href="#services-cards">דלג לתוכן הראשי</a>
+<!-- Top utility bar -->
+<div class="topbar py-1">
+<div class="container d-flex flex-wrap align-items-center justify-content-between">
+<div class="d-flex gap-3 small">
+<span><strong>שירות לקוחות:</strong> <a href="tel:046424111">04-6424111</a></span>
+<span><strong>מכירות:</strong> <a href="tel:1700707111">1-700-707-111</a></span>
+<span><strong>חיפוש עבודה:</strong> <a href="tel:046424111">04-6424111</a></span>
+</div>
+<div class="d-flex gap-2">
+<a class="btn btn-sm btn-outline-secondary" href="#contact">צור קשר</a>
+<a aria-label="WhatsApp" class="btn-whatsapp-icon" href="https://wa.me/97246424111" target="_blank">
+<svg aria-hidden="true" fill="none" viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+<path d="M19.11 17.34c-.26-.13-1.5-.74-1.73-.82-.23-.09-.4-.13-.57.13-.17.26-.65.82-.8.99-.15.17-.3.2-.56.07-.26-.13-1.1-.41-2.09-1.31-.77-.69-1.3-1.54-1.45-1.8-.15-.26-.02-.4.11-.53.11-.11.26-.3.39-.46.13-.15.17-.26.26-.43.09-.17.04-.33-.02-.46-.06-.13-.57-1.39-.78-1.9-.21-.5-.42-.43-.57-.43-.15 0-.33-.02-.5-.02-.17 0-.46.07-.7.33s-.92.9-.92 2.2c0 1.3.94 2.56 1.07 2.74.13.17 1.85 2.82 4.49 3.95.63.27 1.12.43 1.5.55.63.2 1.2.17 1.65.1.5-.07 1.5-.61 1.71-1.2.21-.59.21-1.1.15-1.2-.06-.11-.23-.17-.5-.3Z" fill="currentColor"></path>
+<path d="M26.8 5.2A13.53 13.53 0 0 0 16 .67C7.86.67 1.27 7.25 1.27 15.4c0 2.41.63 4.78 1.85 6.86L1 30.73l8.65-2.06a13.7 13.7 0 0 0 6.35 1.6c8.13 0 14.73-6.58 14.73-14.73 0-3.93-1.53-7.63-4.33-10.34Zm-10.8 22.5c-2.2 0-4.38-.58-6.29-1.69l-.45-.26-5.14 1.22 1.37-5.02-.29-.51a12.54 12.54 0 0 1-1.7-6.36C3.5 8.57 9.3 2.77 16 2.77s12.5 5.79 12.5 12.5-5.79 12.43-12.5 12.43Z" fill="currentColor"></path>
+</svg>
+</a>
+<form action="index.html" class="d-none d-md-flex ms-auto" id="topSearchForm" method="GET" onsubmit="return handleTopSearch(this)">
+<div class="input-group input-group-sm" style="max-width:240px;">
+<span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
+<input aria-label="חיפוש" class="form-control" id="topSearch" name="q" placeholder="חיפוש..." type="search"/>
+</div>
+</form>
+</div>
+</div>
+</div>
+<!-- Navbar (white) -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm border-bottom nav-offset">
+<div class="container-fluid">
+<a class="navbar-brand" href="#home">
+<img alt="ש.א.ש – מערכות מיגון ושמירה" height="45" src="assets/logo_sws.png"/>
+</a>
+<button aria-controls="nav" aria-expanded="false" aria-label="פתיחת תפריט" class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav ms-auto text-end">
+<li class="nav-item"><a class="nav-link" href="#home">בית</a></li>
+<li class="nav-item"><a class="nav-link" href="about.html">אודות</a></li>
+<li class="nav-item dropdown">
+<a onclick="return false;" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">מוקד</a>
+<ul class="dropdown-menu text-end">
+<li><a class="dropdown-item" href="services/monitoring-patrol.html">מוקד וסיור</a></li>
+<li><a class="dropdown-item" href="services/visual-monitoring.html">מוקד רואה</a></li>
+<li><a class="dropdown-item" href="services/fire-monitoring.html">מוקד ניטור אש</a></li>
+<li><a class="dropdown-item" href="services/temperature-control.html">בקרת טמפרטורה</a></li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a onclick="return false;" aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">מערכות מיגון</a>
+<ul class="dropdown-menu text-end">
+<li><a class="dropdown-item" href="services/alarms.html">מערכות אזעקה</a></li>
+<li><a class="dropdown-item" href="services/alarms-business.html">מערכות אזעקה לעסק</a></li>
+<li><a class="dropdown-item" href="services/alarms-home.html">מערכות אזעקה לבית</a></li>
+<li><a class="dropdown-item" href="services/cctv.html">מצלמות אבטחה</a></li><li><a class="dropdown-item" href="services/multimedia.html">מולטימדיה וכריזה</a></li>
+<li><a class="dropdown-item" href="services/intercom.html">מערכות אינטרקום</a></li>
+<li><a class="dropdown-item" href="services/panic-buttons.html">לחצני מצוקה</a></li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a onclick="return false;" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">שמירה ואבטחה</a>
+<ul class="dropdown-menu text-end">
+<li><a class="dropdown-item" href="services/physical-security.html">שרות אבטחה פיזית</a></li>
+<li><a class="dropdown-item" href="services/community-security.html">שרות אבטחה ליישובים ושכונות</a></li>
+</ul>
+</li>
+<li class="nav-item"><a class="nav-link" href="services/ai-security.html">AI Security+</a></li>
+<li class="nav-item"><a class="nav-link" href="jobs.html">דרושים</a></li>
+</ul>
+</div>
+</div>
+</nav>
+<!-- HERO with Video/Image Fallback -->
+<header class="hero position-relative d-flex align-items-center justify-content-center text-center text-white" id="home">
+<!-- Video -->
+<video autoplay="" class="hero__bg" loop="" muted="" playsinline="" poster="assets/hero.jpg">
+<source src="assets/hero.mp4" type="video/mp4"/>
+</video>
+<!-- Image fallback -->
+<div class="hero__img" style="background-image:url('assets/hero.jpg');"></div>
+<!-- Dark overlay -->
+<div class="hero__overlay"></div>
+<!-- Content -->
+<div class="container position-relative">
+<div class="hero-card mx-auto p-4 p-md-5 mb-4">
+<img alt="ש.א.ש – מערכות מיגון ושמירה" class="mb-3 hero-logo" src="assets/logo_sws.png"/>
+<h1 class="display-4 display-md-3 fw-bold mb-2">ש.א.ש – שומרים עליכם מאז 1967</h1>
+<p class="lead mb-4">מוקד 24/7, סיירות תגובה, מערכות מיגון מתקדמות ושירותי שמירה מותאמים לעסקים, מוסדות ופרטיים.</p>
+<div class="d-flex justify-content-center gap-2 flex-wrap">
+<a class="btn btn-danger btn-lg" href="tel:1700707111">דברו איתנו: 1-700-707-111</a>
+<a aria-label="WhatsApp" class="btn-whatsapp-icon" href="https://wa.me/97246424111" target="_blank">
+<svg aria-hidden="true" fill="none" viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+<path d="M19.11 17.34c-.26-.13-1.5-.74-1.73-.82-.23-.09-.4-.13-.57.13-.17.26-.65.82-.8.99-.15.17-.3.2-.56.07-.26-.13-1.1-.41-2.09-1.31-.77-.69-1.3-1.54-1.45-1.8-.15-.26-.02-.4.11-.53.11-.11.26-.3.39-.46.13-.15.17-.26.26-.43.09-.17.04-.33-.02-.46-.06-.13-.57-1.39-.78-1.9-.21-.5-.42-.43-.57-.43-.15 0-.33-.02-.5-.02-.17 0-.46.07-.7.33s-.92.9-.92 2.2c0 1.3.94 2.56 1.07 2.74.13.17 1.85 2.82 4.49 3.95.63.27 1.12.43 1.5.55.63.2 1.2.17 1.65.1.5-.07 1.5-.61 1.71-1.2.21-.59.21-1.1.15-1.2-.06-.11-.23-.17-.5-.3Z" fill="currentColor"></path>
+<path d="M26.8 5.2A13.53 13.53 0 0 0 16 .67C7.86.67 1.27 7.25 1.27 15.4c0 2.41.63 4.78 1.85 6.86L1 30.73l8.65-2.06a13.7 13.7 0 0 0 6.35 1.6c8.13 0 14.73-6.58 14.73-14.73 0-3.93-1.53-7.63-4.33-10.34Zm-10.8 22.5c-2.2 0-4.38-.58-6.29-1.69l-.45-.26-5.14 1.22 1.37-5.02-.29-.51a12.54 12.54 0 0 1-1.7-6.36C3.5 8.57 9.3 2.77 16 2.77s12.5 5.79 12.5 12.5-5.79 12.43-12.5 12.43Z" fill="currentColor"></path>
+</svg>
+</a>
+<a class="btn btn-outline-light btn-lg" href="#contact">טופס פנייה</a>
+</div>
+<div class="hero-badges d-flex justify-content-center flex-wrap gap-3 mt-4">
+<span class="badge-item">ניסיון מאז 1967</span>
+<span class="badge-item">מוקד 24/7</span>
+<span class="badge-item">פריסה ארצית</span>
+<span class="badge-item">AI Security+</span>
+</div>
+</div>
+</div>
+</header>
+<main class="mt-5 pt-5">
+<section class="bg-light py-5" id="center">
+<div class="container">
+</div></section>
+<section class="kpi-band py-5 py-lg-6" id="kpi-band">
+<div class="container">
+<div class="row row-cols-1 row-cols-md-3 g-4 align-items-stretch text-center">
+<div class="col">
+<div class="kpi-item h-100 rounded-4 shadow-sm">
+<div aria-hidden="true" class="kpi-icon">
+<!-- users SVG -->
+<svg class="icon" fill="none" height="56" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewbox="0 0 24 24" width="56">
+<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+<circle cx="9" cy="7" r="4"></circle>
+<path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+<path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+</svg>
+</div>
+<div aria-label="לקוחות" class="kpi-number" data-target="5000">0</div>
+<div class="kpi-label">לקוחות</div>
+</div>
+</div>
+<div class="col">
+<div class="kpi-item h-100 rounded-4 shadow-sm">
+<div aria-hidden="true" class="kpi-icon">
+<!-- handshake SVG -->
+<svg class="icon" fill="none" height="56" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewbox="0 0 24 24" width="56">
+<path d="M8 7l4 4 4-4"></path>
+<path d="M3 7h5l4 4 4-4h5"></path>
+<path d="M3 17l5 0 4-4 4 4h5"></path>
+</svg>
+</div>
+<div aria-label="עובדים" class="kpi-number" data-target="1000">0</div>
+<div class="kpi-label">עובדים</div>
+</div>
+</div>
+<div class="col">
+<div class="kpi-item h-100 rounded-4 shadow-sm">
+<div aria-hidden="true" class="kpi-icon">
+<!-- calendar SVG -->
+<svg class="icon" fill="none" height="56" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewbox="0 0 24 24" width="56">
+<rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect>
+<line x1="16" x2="16" y1="2" y2="6"></line>
+<line x1="8" x2="8" y1="2" y2="6"></line>
+<line x1="3" x2="21" y1="10" y2="10"></line>
+</svg>
+</div>
+<div aria-label="שנות פעילות" class="kpi-number" data-target="58">0</div>
+<div class="kpi-label">שנות פעילות</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-5" id="services-cards">
+<div class="container">
+<h2 class="text-danger mb-4 text-center">תחומי פעילות</h2>
+<div class="row g-4">
+<div class="col-12 col-sm-6 col-md-4 col-lg-3">
+<a class="service-card" href="services/monitoring-patrol.html">
+<div class="card text-white border-0 shadow-sm h-100 overflow-hidden">
+<img alt="מוקד וסיור" class="card-img" src="assets/service_monitoring-patrol.png"/>
+<div class="card-img-overlay d-flex flex-column justify-content-end p-3 overlay-dark">
+<div class="d-flex align-items-center gap-2 mb-1">
+<i class="bi bi-geo-alt-fill fs-5"></i><h5 class="card-title mb-0">מוקד וסיור</h5>
+</div>
+<div class="small opacity-100 fw-medium">מוקד 24/7 וסיירות תגובה</div>
+<div class="small-2lines">נוכחות בשטח, הגעה מהירה ודיווח מסודר.</div>
+</div>
+</div>
+</a>
+</div>
+<div class="col-12 col-sm-6 col-md-4 col-lg-3">
+<a class="service-card" href="services/visual-monitoring.html">
+<div class="card text-white border-0 shadow-sm h-100 overflow-hidden">
+<img alt="מוקד רואה" class="card-img" src="assets/service_visual-monitoring.png"/>
+<div class="card-img-overlay d-flex flex-column justify-content-end p-3 overlay-dark">
+<div class="d-flex align-items-center gap-2 mb-1">
+<i class="bi bi-eye-fill fs-5"></i><h5 class="card-title mb-0">מוקד רואה</h5>
+</div>
+<div class="small opacity-100 fw-medium">ניטור מצלמות בזמן אמת</div>
+<div class="small-2lines">התראות חכמות וזיהוי חריגות עם וידאו מאומת.</div>
+</div>
+</div>
+</a>
+</div>
+<div class="col-12 col-sm-6 col-md-4 col-lg-3">
+<a class="service-card" href="services/fire-monitoring.html">
+<div class="card text-white border-0 shadow-sm h-100 overflow-hidden">
+<img alt="מוקד ניטור אש" class="card-img" src="assets/service_fire-monitoring.png"/>
+<div class="card-img-overlay d-flex flex-column justify-content-end p-3 overlay-dark">
+<div class="d-flex align-items-center gap-2 mb-1">
+<i class="bi bi-fire fs-5"></i><h5 class="card-title mb-0">מוקד ניטור אש</h5>
+</div>
+<div class="small opacity-100 fw-medium">חיבור מערכות גילוי אש</div>
+<div class="small-2lines">התרעה מיידית ותיאום מול כיבוי אש.</div>
+</div>
+</div>
+</a>
+</div>
+<div class="col-12 col-sm-6 col-md-4 col-lg-3">
+<a class="service-card" href="services/temperature-control.html">
+<div class="card text-white border-0 shadow-sm h-100 overflow-hidden">
+<img alt="בקרת טמפרטורה" class="card-img" src="assets/service_temperature-control.png"/>
+<div class="card-img-overlay d-flex flex-column justify-content-end p-3 overlay-dark">
+<div class="d-flex align-items-center gap-2 mb-1">
+<i class="bi bi-thermometer fs-5"></i><h5 class="card-title mb-0">בקרת טמפרטורה</h5>
+</div>
+<div class="small opacity-100 fw-medium">ניטור סביבות רגישות</div>
+<div class="small-2lines">שרתים, חדרי קירור ומעבדות – התרעה על חריגות.</div>
+</div>
+</div>
+</a>
+</div>
+<div class="col-12 col-sm-6 col-md-4 col-lg-3">
+<a class="service-card" href="services/alarms.html">
+<div class="card text-white border-0 shadow-sm h-100 overflow-hidden">
+<img alt="מערכות אזעקה" class="card-img" src="assets/service_alarms.png"/>
+<div class="card-img-overlay d-flex flex-column justify-content-end p-3 overlay-dark">
+<div class="d-flex align-items-center gap-2 mb-1">
+<i class="bi bi-bell-fill fs-5"></i><h5 class="card-title mb-0">מערכות אזעקה</h5>
+</div>
+<div class="small opacity-100 fw-medium">אזעקות מאושרות תקן</div>
+<div class="small-2lines">חיבור למוקד, אפליקציה וניהול הרשאות.</div>
+</div>
+</div>
+</a>
+</div>
+<div class="col-12 col-sm-6 col-md-4 col-lg-3">
+<a class="service-card" href="services/alarms-business.html">
+<div class="card text-white border-0 shadow-sm h-100 overflow-hidden">
+<img alt="אזעקה לעסק" class="card-img" src="assets/service_alarms-business.png"/>
+<div class="card-img-overlay d-flex flex-column justify-content-end p-3 overlay-dark">
+<div class="d-flex align-items-center gap-2 mb-1">
+<i class="bi bi-building-fill fs-5"></i><h5 class="card-title mb-0">אזעקה לעסק</h5>
+</div>
+<div class="small opacity-100 fw-medium">הקשחת אתרים עסקיים</div>
+<div class="small-2lines">חיישנים חכמים ותרחישי פתיחה/סגירה.</div>
+</div>
+</div>
+</a>
+</div>
+<div class="col-12 col-sm-6 col-md-4 col-lg-3">
+<a class="service-card" href="services/alarms-home.html">
+<div class="card text-white border-0 shadow-sm h-100 overflow-hidden">
+<img alt="אזעקה לבית" class="card-img" src="assets/service_alarms-home.png"/>
+<div class="card-img-overlay d-flex flex-column justify-content-end p-3 overlay-dark">
+<div class="d-flex align-items-center gap-2 mb-1">
+<i class="bi bi-house-door-fill fs-5"></i><h5 class="card-title mb-0">אזעקה לבית</h5>
+</div>
+<div class="small opacity-100 fw-medium">הגנת משפחה חכמה</div>
+<div class="small-2lines">מערכות ידידותיות בעברית, שליטה מהנייד.</div>
+</div>
+</div>
+</a>
+</div>
+<div class="col-12 col-sm-6 col-md-4 col-lg-3">
+<a class="service-card" href="services/cctv.html">
+<div class="card text-white border-0 shadow-sm h-100 overflow-hidden">
+<img alt="מצלמות אבטחה" class="card-img" src="assets/service_cctv.png"/>
+<div class="card-img-overlay d-flex flex-column justify-content-end p-3 overlay-dark">
+<div class="d-flex align-items-center gap-2 mb-1">
+<i class="bi bi-camera-video-fill fs-5"></i><h5 class="card-title mb-0">מצלמות אבטחה</h5>
+</div>
+<div class="small opacity-100 fw-medium">CCTV וניתוח וידאו</div>
+<div class="small-2lines">איכות עד 4K, הקלטה מאובטחת וענן.</div>
+</div>
+</div>
+</a>
+</div>
+<div class="col-12 col-sm-6 col-md-4 col-lg-3">
+<a class="service-card" href="services/intercom.html">
+<div class="card text-white border-0 shadow-sm h-100 overflow-hidden">
+<img alt="מערכות אינטרקום" class="card-img" src="assets/service_intercom.png"/>
+<div class="card-img-overlay d-flex flex-column justify-content-end p-3 overlay-dark">
+<div class="d-flex align-items-center gap-2 mb-1">
+<i class="bi bi-phone-vibrate-fill fs-5"></i><h5 class="card-title mb-0">מערכות אינטרקום</h5>
+</div>
+<div class="small opacity-100 fw-medium">אינטרקום וידאו חכם</div>
+<div class="small-2lines">פתיחת שער/דלת מרחוק ותיעוד שיחות.</div>
+</div>
+</div>
+</a>
+</div>
+<div class="col-12 col-sm-6 col-md-4 col-lg-3">
+<a class="service-card" href="services/panic-buttons.html">
+<div class="card text-white border-0 shadow-sm h-100 overflow-hidden">
+<img alt="לחצני מצוקה" class="card-img" src="assets/service_panic-buttons.png"/>
+<div class="card-img-overlay d-flex flex-column justify-content-end p-3 overlay-dark">
+<div class="d-flex align-items-center gap-2 mb-1">
+<i class="bi bi-exclamation-octagon-fill fs-5"></i><h5 class="card-title mb-0">לחצני מצוקה</h5>
+</div>
+<div class="small opacity-100 fw-medium">התראה שקטה מיידית</div>
+<div class="small-2lines">שידור מיקום ותגובה מהירה מהמוקד.</div>
+</div>
+</div>
+</a>
+</div>
+<div class="col-12 col-sm-6 col-md-4 col-lg-3">
+<a class="service-card" href="services/physical-security.html">
+<div class="card text-white border-0 shadow-sm h-100 overflow-hidden">
+<img alt="אבטחה פיזית" class="card-img" src="assets/service_physical-security.png"/>
+<div class="card-img-overlay d-flex flex-column justify-content-end p-3 overlay-dark">
+<div class="d-flex align-items-center gap-2 mb-1">
+<i class="bi bi-shield-lock-fill fs-5"></i><h5 class="card-title mb-0">אבטחה פיזית</h5>
+</div>
+<div class="small opacity-100 fw-medium">מאבטחים מוסמכים</div>
+<div class="small-2lines">נהלים מוקפדים, נוכחות מרתיעה ופיקוח.</div>
+</div>
+</div>
+</a>
+</div>
+<div class="col-12 col-sm-6 col-md-4 col-lg-3">
+<a class="service-card" href="services/community-security.html">
+<div class="card text-white border-0 shadow-sm h-100 overflow-hidden">
+<img alt="אבטחת שכונות ויישובים" class="card-img" src="assets/service_community-security.png"/>
+<div class="card-img-overlay d-flex flex-column justify-content-end p-3 overlay-dark">
+<div class="d-flex align-items-center gap-2 mb-1">
+<i class="bi bi-people-fill fs-5"></i><h5 class="card-title mb-0">אבטחת שכונות ויישובים</h5>
+</div>
+<div class="small opacity-100 fw-medium">מענים קהילתיים</div>
+<div class="small-2lines">סיירות, מחסומים ושיתוף פעולה עם הרשויות.</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+</div>
+</section>
+<section class="py-5 bg-white" id="clients">
+<div class="container">
+<h2 class="text-center mb-4">בין לקוחותינו</h2>
+</div>
+<div class="clients-strip overflow-hidden py-3">
+<div class="clients-track d-flex align-items-center gap-5">
+<img alt="מי התבור" class="client-logo" src="assets/clients/client1.png"/>
+<img alt="סופר גז טבעי" class="client-logo" src="assets/clients/client2.png"/>
+<img alt="בנק הפועלים" class="client-logo" src="assets/clients/client3.png"/>
+<img alt="Carmochrome" class="client-logo" src="assets/clients/client4.png"/>
+<img alt="רשות הטבע והגנים" class="client-logo" src="assets/clients/client5.png"/>
+<img alt="מרום הגליל" class="client-logo" src="assets/clients/client6.png"/>
+<img alt="מועצה אזורית מגידו" class="client-logo" src="assets/clients/client7.png"/>
+<img alt="המכללה האקדמית צפת" class="client-logo" src="assets/clients/client8.png"/>
+<img alt="המכון הגיאופיזי" class="client-logo" src="assets/clients/client9.png"/>
+<img alt="מרימון גז טבעי" class="client-logo" src="assets/clients/client10.png"/>
+<img alt="מי התבור" class="client-logo" src="assets/clients/client1.png"/>
+<img alt="סופר גז טבעי" class="client-logo" src="assets/clients/client2.png"/>
+<img alt="בנק הפועלים" class="client-logo" src="assets/clients/client3.png"/>
+<img alt="Carmochrome" class="client-logo" src="assets/clients/client4.png"/>
+<img alt="רשות הטבע והגנים" class="client-logo" src="assets/clients/client5.png"/>
+<img alt="מרום הגליל" class="client-logo" src="assets/clients/client6.png"/>
+<img alt="מועצה אזורית מגידו" class="client-logo" src="assets/clients/client7.png"/>
+<img alt="המכללה האקדמית צפת" class="client-logo" src="assets/clients/client8.png"/>
+<img alt="המכון הגיאופיזי" class="client-logo" src="assets/clients/client9.png"/>
+<img alt="מרימון גז טבעי" class="client-logo" src="assets/clients/client10.png"/>
+</div>
+</div>
+</section>
+<section class="bg-dark text-white text-center py-5" id="contact">
+<div class="container">
+<h2 class="text-danger mb-3">צור קשר</h2>
+<p><strong>טלפון:</strong> <a class="text-white" href="tel:1700707111">1-700-707-111</a></p>
+<p><strong>וואטסאפ:</strong> <a aria-label="WhatsApp" class="btn-whatsapp-icon" href="https://wa.me/97246424111" target="_blank">
+<svg aria-hidden="true" fill="none" viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+<path d="M19.11 17.34c-.26-.13-1.5-.74-1.73-.82-.23-.09-.4-.13-.57.13-.17.26-.65.82-.8.99-.15.17-.3.2-.56.07-.26-.13-1.1-.41-2.09-1.31-.77-.69-1.3-1.54-1.45-1.8-.15-.26-.02-.4.11-.53.11-.11.26-.3.39-.46.13-.15.17-.26.26-.43.09-.17.04-.33-.02-.46-.06-.13-.57-1.39-.78-1.9-.21-.5-.42-.43-.57-.43-.15 0-.33-.02-.5-.02-.17 0-.46.07-.7.33s-.92.9-.92 2.2c0 1.3.94 2.56 1.07 2.74.13.17 1.85 2.82 4.49 3.95.63.27 1.12.43 1.5.55.63.2 1.2.17 1.65.1.5-.07 1.5-.61 1.71-1.2.21-.59.21-1.1.15-1.2-.06-.11-.23-.17-.5-.3Z" fill="currentColor"></path>
+<path d="M26.8 5.2A13.53 13.53 0 0 0 16 .67C7.86.67 1.27 7.25 1.27 15.4c0 2.41.63 4.78 1.85 6.86L1 30.73l8.65-2.06a13.7 13.7 0 0 0 6.35 1.6c8.13 0 14.73-6.58 14.73-14.73 0-3.93-1.53-7.63-4.33-10.34Zm-10.8 22.5c-2.2 0-4.38-.58-6.29-1.69l-.45-.26-5.14 1.22 1.37-5.02-.29-.51a12.54 12.54 0 0 1-1.7-6.36C3.5 8.57 9.3 2.77 16 2.77s12.5 5.79 12.5 12.5-5.79 12.43-12.5 12.43Z" fill="currentColor"></path>
+</svg>
+</a></p>
+<p><strong>מייל:</strong> <a class="text-white" href="mailto:swsltd@bezeqint.net">swsltd@bezeqint.net</a></p>
+<p><strong>כתובת:</strong> יצחק נבון 3, עפולה</p>
+</div>
+</section>
+<section class="bg-light py-5" id="branches">
+<div class="container">
+<h2 class="text-danger mb-4 text-center">סניפים</h2>
+<div class="row g-4 justify-content-center">
+<div class="col-md-5">
+<div class="p-4 border rounded-3 h-100 text-center">
+<h5>הנהלה ראשית</h5>
+<p class="mb-1">יצחק נבון 3, עפולה</p>
+</div>
+</div>
+<div class="col-md-5">
+<div class="p-4 border rounded-3 h-100 text-center">
+<h5>סניף חיפה</h5>
+<p class="mb-1">בית טופז, לאון שטיין 11, צ'ק פוסט חיפה</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="container py-5" id="systems">
+</section>
+<section class="bg-light py-5" id="security">
+<div class="container">
+</div></section>
+</main>
+<footer class="bg-white border-top py-4 text-center">
+<div class="container">
+<p class="mb-1"><strong>הנהלה ראשית:</strong> יצחק נבון 3, עפולה</p>
+<p class="mb-1"><strong>סניף חיפה:</strong> בית טופז, לאון שטיין 11, צ'ק פוסט חיפה</p>
+<p class="mb-0">© 2025 ש.א.ש – כל הזכויות שמורות</p>
+</div>
+</footer>
+<!-- Floating WhatsApp Button -->
+<a aria-label="WhatsApp" class="btn-whatsapp-icon" href="https://wa.me/97246424111" target="_blank">
+<svg aria-hidden="true" fill="none" viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+<path d="M19.11 17.34c-.26-.13-1.5-.74-1.73-.82-.23-.09-.4-.13-.57.13-.17.26-.65.82-.8.99-.15.17-.3.2-.56.07-.26-.13-1.1-.41-2.09-1.31-.77-.69-1.3-1.54-1.45-1.8-.15-.26-.02-.4.11-.53.11-.11.26-.3.39-.46.13-.15.17-.26.26-.43.09-.17.04-.33-.02-.46-.06-.13-.57-1.39-.78-1.9-.21-.5-.42-.43-.57-.43-.15 0-.33-.02-.5-.02-.17 0-.46.07-.7.33s-.92.9-.92 2.2c0 1.3.94 2.56 1.07 2.74.13.17 1.85 2.82 4.49 3.95.63.27 1.12.43 1.5.55.63.2 1.2.17 1.65.1.5-.07 1.5-.61 1.71-1.2.21-.59.21-1.1.15-1.2-.06-.11-.23-.17-.5-.3Z" fill="currentColor"></path>
+<path d="M26.8 5.2A13.53 13.53 0 0 0 16 .67C7.86.67 1.27 7.25 1.27 15.4c0 2.41.63 4.78 1.85 6.86L1 30.73l8.65-2.06a13.7 13.7 0 0 0 6.35 1.6c8.13 0 14.73-6.58 14.73-14.73 0-3.93-1.53-7.63-4.33-10.34Zm-10.8 22.5c-2.2 0-4.38-.58-6.29-1.69l-.45-.26-5.14 1.22 1.37-5.02-.29-.51a12.54 12.54 0 0 1-1.7-6.36C3.5 8.57 9.3 2.77 16 2.77s12.5 5.79 12.5 12.5-5.79 12.43-12.5 12.43Z" fill="currentColor"></path>
+</svg>
+</a>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+<!-- Floating Contact Button -->
+<button class="contact-float btn btn-danger btn-lg" data-bs-target="#contactModal" data-bs-toggle="modal" type="button">
+  צור קשר
+</button>
+<!-- Contact Modal -->
+<div aria-hidden="true" class="modal fade" id="contactModal" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title">צור קשר</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body">
+<form action="https://formspree.io/f/your-form-id" dir="rtl" id="contactForm" method="POST">
+<div class="mb-3">
+<label class="form-label">שם מלא</label>
+<input class="form-control" name="name" required="" type="text"/>
+</div>
+<div class="mb-3">
+<label class="form-label">טלפון</label>
+<input class="form-control" name="phone" required="" type="tel"/>
+</div>
+<div class="mb-3">
+<label class="form-label">אימייל</label>
+<input class="form-control" name="email" type="email"/>
+</div>
+<div class="mb-3">
+<label class="form-label">הודעה</label>
+<textarea class="form-control" name="message" required="" rows="4"></textarea>
+</div>
+<button class="btn btn-danger w-100" type="submit">שליחה</button>
+<p class="form-hint small mt-2 text-muted">השדות יישלחו בצורה מאובטחת. ניתן להחליף יעד שליחה בקובץ.</p>
+</form>
+<div class="alert alert-success mt-3 d-none" id="formSuccess">תודה! פנייתך התקבלה ונחזור אליך בהקדם.</div>
+</div>
+<form action="index.html" class="d-none d-md-flex ms-auto" id="topSearchForm" method="GET" onsubmit="return handleTopSearch(this)">
+<div class="input-group input-group-sm" style="max-width:240px;">
+<span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
+<input aria-label="חיפוש" class="form-control" id="topSearch" name="q" placeholder="חיפוש..." type="search"/>
+</div>
+</form>
+</div>
+</div>
+</div>
+<script src="assets/js/kpi-band.js"></script></body>
+</html>

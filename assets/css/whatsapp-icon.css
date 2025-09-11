@@ -1,0 +1,16 @@
+
+/* Circular WhatsApp icon button */
+.btn-whatsapp-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #25D366;
+  color: #fff !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,.2);
+  text-decoration: none !important;
+}
+.btn-whatsapp-icon:hover { filter: brightness(0.95); color:#fff !important; }
+.btn-whatsapp-icon svg { width: 18px; height: 32px; display:block; }
