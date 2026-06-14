@@ -10,128 +10,227 @@
   <style>
     :root{
       --sws-red:#d71920;
-      --sws-green:#10b957;
-      --sws-dark:#111;
-      --sws-muted:#5b6470;
-      --sws-bg:#f3f5f8;
+      --sws-green:#18b95b;
+      --sws-dark:#111827;
+      --sws-text:#1f2937;
+      --sws-muted:#5f6b7a;
+      --sws-card:rgba(255,255,255,.78);
     }
     body{
       margin:0;
       font-family: Arial, "Heebo", sans-serif;
+      color:var(--sws-dark);
       background:
-        radial-gradient(circle at 15% 20%, rgba(255,255,255,.95), transparent 34%),
-        radial-gradient(circle at 80% 10%, rgba(255,255,255,.75), transparent 28%),
-        linear-gradient(135deg,#ffffff 0%,#eef1f5 42%,#dfe4ea 100%);
-      color:#111;
+        radial-gradient(circle at 18% 16%, rgba(255,255,255,.98), transparent 30%),
+        radial-gradient(circle at 78% 8%, rgba(255,255,255,.72), transparent 28%),
+        linear-gradient(135deg,#ffffff 0%,#f2f4f7 38%,#e1e6ec 100%);
       overflow-x:hidden;
     }
-    .sws-wave{
+    .sws-page-bg{
       position:fixed;
       inset:0;
-      pointer-events:none;
       z-index:-1;
+      pointer-events:none;
       background:
-        linear-gradient(150deg, transparent 0 42%, rgba(180,188,198,.22) 42% 54%, transparent 54%),
-        linear-gradient(28deg, transparent 0 58%, rgba(202,207,214,.25) 58% 69%, transparent 69%);
-      opacity:.8;
+        linear-gradient(150deg, transparent 0 43%, rgba(183,191,202,.20) 43% 54%, transparent 54%),
+        linear-gradient(28deg, transparent 0 58%, rgba(205,211,219,.22) 58% 69%, transparent 69%);
     }
     .navbar{
-      background:rgba(255,255,255,.86);
-      backdrop-filter: blur(14px);
+      background:rgba(255,255,255,.88);
+      backdrop-filter:blur(14px);
       box-shadow:0 10px 35px rgba(0,0,0,.06);
+      padding:10px 0;
     }
-    .navbar-brand img{height:62px;width:auto}
+    .navbar-brand img{height:64px;width:auto}
     .nav-link{
-      font-weight:800;
-      color:#111 !important;
-      margin:0 10px;
+      color:#111!important;
+      font-weight:850;
+      margin:0 8px;
       border-bottom:3px solid transparent;
+      padding:12px 8px!important;
     }
-    .nav-link.active,.nav-link:hover{border-bottom-color:var(--sws-red);color:var(--sws-red)!important}
+    .nav-link:hover,.nav-link.active{
+      color:var(--sws-red)!important;
+      border-bottom-color:var(--sws-red);
+    }
     .top-btn{
-      border-radius:10px;
-      font-weight:800;
-      padding:12px 20px;
+      border-radius:12px;
+      font-weight:900;
+      min-height:44px;
+      padding:11px 18px;
       text-decoration:none;
       display:inline-flex;
       align-items:center;
+      justify-content:center;
       gap:8px;
-      box-shadow:0 9px 22px rgba(0,0,0,.10);
+      box-shadow:0 8px 20px rgba(0,0,0,.09);
+      white-space:nowrap;
     }
     .btn-red{background:var(--sws-red);color:white}
     .btn-green{background:var(--sws-green);color:white}
-    .btn-search{background:#fff;color:#111;border:1px solid #d7dbe2}
+    .btn-light-sws{background:white;color:#111;border:1px solid #d9dee7}
     .hero{
-      padding:54px 0 30px;
+      padding:60px 0 28px;
     }
-    .hero h1{
-      font-size:clamp(2.1rem,4.3vw,4.8rem);
-      line-height:1.08;
-      font-weight:950;
-      letter-spacing:-1px;
+    .hero-grid{
+      display:grid;
+      grid-template-columns:minmax(420px, 48%) minmax(420px, 52%);
+      gap:54px;
+      align-items:center;
+      direction:ltr;
     }
-    .hero h1 .red{color:var(--sws-red)}
-    .hero p.lead{
-      font-size:clamp(1.1rem,1.6vw,1.55rem);
-      line-height:1.75;
-      color:#222;
-      font-weight:500;
+    .hero-image-wrap{
+      direction:rtl;
+      transform:scale(1.08);
+      transform-origin:center left;
     }
-    .control-room{
-      border-radius:24px;
-      min-height:430px;
+    .hero-visual{
+      min-height:520px;
+      border-radius:34px;
+      overflow:hidden;
+      position:relative;
       background:
-        linear-gradient(to bottom, rgba(8,14,22,.06), rgba(8,14,22,.16)),
+        linear-gradient(to bottom, rgba(7,12,20,.02), rgba(7,12,20,.14)),
         url("../assets/ai-security-control-room.png");
       background-size:cover;
       background-position:center;
-      box-shadow:0 25px 65px rgba(0,0,0,.18);
-      position:relative;
-      overflow:hidden;
+      box-shadow:0 32px 80px rgba(20,31,48,.22);
+      border:1px solid rgba(255,255,255,.78);
     }
-    .control-room::after{
+    .hero-visual::after{
       content:"התראה בזמן אמת\A זיהוי חדירה\A אזור: שער צפוני\A 19:24:31";
       white-space:pre-line;
       position:absolute;
-      top:50px;
-      left:44px;
-      background:rgba(10,20,30,.84);
+      top:38px;
+      left:36px;
+      background:rgba(13,24,38,.86);
       color:#fff;
-      border:1px solid rgba(255,255,255,.15);
-      border-radius:16px;
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:18px;
       padding:18px 22px;
-      font-weight:800;
-      box-shadow:0 16px 35px rgba(0,0,0,.28);
+      font-weight:900;
+      line-height:1.65;
+      box-shadow:0 18px 35px rgba(0,0,0,.28);
     }
-    .cap-card,.step-card,.target-card,.lead-form{
-      background:rgba(255,255,255,.78);
-      border:1px solid rgba(255,255,255,.75);
-      border-radius:22px;
+    .hero-content{
+      direction:rtl;
+      text-align:right;
+    }
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      border:1px solid rgba(215,25,32,.18);
+      background:rgba(255,255,255,.72);
+      border-radius:999px;
+      padding:9px 16px;
+      color:var(--sws-red);
+      font-weight:950;
+      box-shadow:0 10px 25px rgba(0,0,0,.05);
+      margin-bottom:18px;
+    }
+    h1{
+      font-size:clamp(2.2rem,4.2vw,4.65rem);
+      font-weight:950;
+      line-height:1.04;
+      letter-spacing:-1px;
+      margin:0;
+    }
+    .flow-line{
+      margin:24px 0 20px;
+      display:flex;
+      align-items:center;
+      justify-content:flex-start;
+      gap:16px;
+      flex-wrap:wrap;
+      font-size:clamp(1.45rem,2.3vw,2.45rem);
+      font-weight:950;
+      color:var(--sws-red);
+    }
+    .flow-line .arrow{
+      color:#647184;
+      font-weight:900;
+      transform:translateY(-1px);
+    }
+    .hero-lead{
+      color:var(--sws-text);
+      font-size:clamp(1.08rem,1.35vw,1.34rem);
+      line-height:1.85;
+      max-width:800px;
+      margin:0 0 26px;
+    }
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .hero-actions .top-btn{
+      min-width:170px;
+      min-height:52px;
+      font-size:1.05rem;
+    }
+    .small-note{
+      color:var(--sws-muted);
+      font-weight:700;
+      margin-top:12px;
+    }
+    .section-title{
+      font-weight:950;
+      text-align:center;
+      margin:42px 0 26px;
+      font-size:clamp(1.7rem,2.4vw,2.6rem);
+    }
+    .card-soft{
+      background:var(--sws-card);
+      border:1px solid rgba(255,255,255,.78);
+      border-radius:24px;
       box-shadow:0 18px 42px rgba(28,38,55,.10);
-      backdrop-filter: blur(10px);
+      backdrop-filter:blur(10px);
     }
     .cap-card{
-      min-height:122px;
+      min-height:128px;
       padding:20px 12px;
       text-align:center;
-      font-weight:850;
+      font-weight:900;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
     }
     .cap-icon{
       font-size:34px;
-      color:var(--sws-red);
+      margin-bottom:9px;
       line-height:1;
-      margin-bottom:10px;
+    }
+    .benefit-card{
+      padding:26px 18px;
+      text-align:center;
+      height:100%;
+      font-weight:850;
+    }
+    .benefit-card .benefit-icon{
+      width:58px;
+      height:58px;
+      border-radius:18px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin:0 auto 12px;
+      background:rgba(215,25,32,.10);
+      color:var(--sws-red);
+      font-size:30px;
     }
     .lead-form{
-      padding:28px;
-      position:sticky;
-      top:100px;
+      padding:30px;
+      max-width:720px;
+      margin:22px auto 0;
     }
     .form-control,.form-select{
-      min-height:50px;
-      border-radius:13px;
-      border:1px solid #dde2ea;
+      min-height:52px;
+      border-radius:14px;
       font-size:16px;
+      border:1px solid #dbe1ea;
     }
     .send-btn{
       width:100%;
@@ -140,70 +239,118 @@
       border-radius:14px;
       background:var(--sws-red);
       color:white;
-      font-weight:900;
+      font-weight:950;
       font-size:1.08rem;
     }
-    .step-card{
-      padding:26px 18px;
-      text-align:center;
-      height:100%;
-      position:relative;
-    }
-    .step-num{
-      position:absolute;
-      top:-15px;
-      right:18px;
-      width:36px;
-      height:36px;
-      border-radius:50%;
-      background:var(--sws-red);
-      color:white;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:900;
-    }
-    .target-card{
-      padding:20px 10px;
-      text-align:center;
-      font-weight:800;
-      height:100%;
-    }
-    .float-wa{
+    .floating-actions{
       position:fixed;
-      left:24px;
-      bottom:24px;
-      z-index:99;
-      background:var(--sws-red);
-      color:#fff;
-      text-decoration:none;
+      left:18px;
+      bottom:18px;
+      z-index:999;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .floating-actions a{
       border-radius:999px;
-      padding:16px 24px;
-      font-weight:900;
-      box-shadow:0 18px 35px rgba(215,25,32,.3);
+      color:white;
+      text-decoration:none;
+      padding:13px 18px;
+      font-weight:950;
+      box-shadow:0 16px 32px rgba(0,0,0,.18);
+      text-align:center;
+    }
+    .floating-actions .wa{background:var(--sws-green)}
+    .floating-actions .call{background:var(--sws-red)}
+    footer{
+      margin-top:50px;
+      padding:32px 0 90px;
+      text-align:center;
+      color:#687385;
+      font-weight:700;
+    }
+    @media (max-width:1100px){
+      .hero-grid{
+        grid-template-columns:1fr;
+        gap:34px;
+        direction:rtl;
+      }
+      .hero-image-wrap{
+        transform:scale(1);
+        order:2;
+      }
+      .hero-content{
+        order:1;
+        text-align:center;
+      }
+      .flow-line,.hero-actions{
+        justify-content:center;
+      }
+      .hero-visual{
+        min-height:420px;
+      }
     }
     @media (max-width:991px){
-      .control-room{min-height:310px}
-      .control-room::after{left:22px;top:24px;font-size:.9rem}
       .navbar-collapse{
         background:#fff;
-        border-radius:18px;
-        padding:14px;
+        border-radius:20px;
         margin-top:12px;
-        box-shadow:0 14px 36px rgba(0,0,0,.12);
+        padding:14px;
+        box-shadow:0 16px 40px rgba(0,0,0,.12);
       }
-      .lead-form{position:static}
+      .nav-link{
+        margin:0;
+        padding:12px!important;
+      }
     }
     @media (max-width:768px){
-      .hero{text-align:center;padding-top:32px}
-      .top-btn{width:100%;justify-content:center;margin-bottom:8px}
-      .cap-card{min-height:108px}
-      .float-wa{left:14px;right:14px;text-align:center}
+      .hero{padding:34px 0 18px}
+      .container-fluid{padding-left:18px!important;padding-right:18px!important}
+      h1{font-size:2.25rem}
+      .flow-line{
+        font-size:1.45rem;
+        gap:9px;
+        justify-content:center;
+      }
+      .hero-lead{
+        font-size:1.05rem;
+      }
+      .hero-actions{
+        flex-direction:column;
+      }
+      .hero-actions .top-btn{
+        width:100%;
+      }
+      .hero-visual{
+        min-height:300px;
+        border-radius:24px;
+      }
+      .hero-visual::after{
+        top:18px;
+        left:18px;
+        font-size:.84rem;
+        padding:13px 15px;
+      }
+      .cap-card{
+        min-height:112px;
+        border-radius:18px;
+      }
+      .lead-form{
+        padding:20px;
+      }
+      .floating-actions{
+        left:12px;
+        right:12px;
+        flex-direction:row;
+      }
+      .floating-actions a{
+        flex:1;
+      }
     }
   </style>
 </head>
 <body>
-<div class="sws-wave"></div>
+<div class="sws-page-bg"></div>
 
 <nav class="navbar navbar-expand-lg sticky-top">
   <div class="container-fluid px-lg-5">
@@ -225,7 +372,7 @@
         <li class="nav-item"><a class="nav-link" href="../jobs.html">דרושים</a></li>
       </ul>
       <div class="d-flex gap-2 flex-wrap justify-content-center">
-        <a class="top-btn btn-search" href="../index.html#search">🔍</a>
+        <a class="top-btn btn-light-sws" href="../index.html#search">🔍</a>
         <a class="top-btn btn-green" href="https://wa.me/97246424111" target="_blank" rel="noopener">וואטסאפ</a>
         <a class="top-btn btn-red" href="#lead">צור קשר</a>
       </div>
@@ -236,87 +383,105 @@
 <main>
   <section class="hero">
     <div class="container-fluid px-lg-5">
-      <div class="row align-items-center g-5">
-        <div class="col-lg-5">
-          <div class="control-room"></div>
+      <div class="hero-grid">
+        <div class="hero-image-wrap">
+          <div class="hero-visual" aria-label="מוקד בקרה אנליטי"></div>
         </div>
-        <div class="col-lg-7">
-          <h1>מוקד אנליטי מבוסס בינה מלאכותית –<br><span class="red">מזהים. מתריעים. מונעים.</span></h1>
-          <p class="lead mt-4">
-            מצלמות שלא רק מקליטות — אלא מזהות, מנתחות ומתריעות בזמן אמת למוקד המבצעי שלנו.
+
+        <div class="hero-content">
+          <div class="eyebrow">🚨 AI SECURITY – דור ההגנה הבא</div>
+          <h1>מוקד אנליטי מבוסס בינה מלאכותית</h1>
+
+          <div class="flow-line" aria-label="מזהים מתריעים מונעים">
+            <span>מזהים</span>
+            <span class="arrow">⟵</span>
+            <span>מתריעים</span>
+            <span class="arrow">⟵</span>
+            <span>מונעים</span>
+          </div>
+
+          <p class="hero-lead">
+            המצלמות שלכם הופכות לחיישן אבטחה חכם – מזהות חריגות בזמן אמת,
+            מתריעות למוקד המבצעי ופועלות למניעת אירועים עוד לפני שהם מתפתחים.
           </p>
 
-          <div class="row g-3 mt-4">
-            <div class="col-6 col-md-3"><div class="cap-card"><div class="cap-icon">🚧</div>זיהוי חדירה<br>לשטח אסור</div></div>
-            <div class="col-6 col-md-3"><div class="cap-card"><div class="cap-icon">🚶</div>זיהוי שוטטות<br>חשודה</div></div>
-            <div class="col-6 col-md-3"><div class="cap-card"><div class="cap-icon">👥</div>זיהוי התקהלות<br>חריגה</div></div>
-            <div class="col-6 col-md-3"><div class="cap-card"><div class="cap-icon">🧍</div>זיהוי נפילה<br>של אדם</div></div>
-            <div class="col-6 col-md-3"><div class="cap-card"><div class="cap-icon">🔥</div>זיהוי עשן ואש<br>מוקדם</div></div>
-            <div class="col-6 col-md-3"><div class="cap-card"><div class="cap-icon">💼</div>זיהוי השארת<br>חפץ חשוד</div></div>
-            <div class="col-6 col-md-3"><div class="cap-card"><div class="cap-icon">🚪</div>כניסה מחוץ<br>לשעות הפעילות</div></div>
-            <div class="col-6 col-md-3"><div class="cap-card"><div class="cap-icon">📣</div>כריזה קולית<br>מרחוק</div></div>
+          <div class="hero-actions">
+            <a class="top-btn btn-red" href="#lead">קבלו הדגמה</a>
+            <a class="top-btn btn-light-sws" href="#lead">צור קשר</a>
           </div>
+          <div class="small-note">הדגמה ללא התחייבות · מתאים לעסקים, מפעלים, אתרי בנייה ומתחמים לוגיסטיים</div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="py-4 py-lg-5">
+  <section class="py-3 py-lg-4">
     <div class="container-fluid px-lg-5">
-      <div class="row g-4 align-items-start">
-        <div class="col-lg-3" id="lead">
-          <form class="lead-form" action="https://formspree.io/f/mwvjawag" method="POST">
-            <input type="hidden" name="source_page" value="AI Security+">
-            <h3 class="fw-black text-center mb-2">רוצים לראות איך זה עובד?</h3>
-            <p class="text-center mb-3">השאירו פרטים ונחזור אליכם <strong class="text-danger">להדגמה ללא התחייבות</strong></p>
-            <div class="mb-3"><input class="form-control" name="name" required placeholder="שם מלא"></div>
-            <div class="mb-3"><input class="form-control" name="phone" type="tel" inputmode="tel" required placeholder="טלפון"></div>
-            <div class="mb-3"><input class="form-control" name="email" type="email" placeholder="אימייל"></div>
-            <div class="mb-3">
-              <select class="form-select" name="business_type">
-                <option value="">סוג עסק / ארגון</option>
-                <option>מפעל</option>
-                <option>מרכז לוגיסטי</option>
-                <option>אתר בנייה</option>
-                <option>בית ספר / מוסד</option>
-                <option>חניון</option>
-                <option>קיבוץ / מושב</option>
-                <option>עסק מסחרי</option>
-                <option>אחר</option>
-              </select>
-            </div>
-            <button class="send-btn" type="submit">שלחו לי פרטים ←</button>
-            <div class="text-center small text-muted mt-3">הפרטים שלכם שמורים בבטחה</div>
-          </form>
-        </div>
-
-        <div class="col-lg-9">
-          <h2 class="text-center fw-black mb-5">איך זה עובד?</h2>
-          <div class="row g-4">
-            <div class="col-md"><div class="step-card"><div class="step-num">1</div><div class="fs-1 mb-3">📹</div><h5 class="fw-bold">המצלמה מזהה אירוע</h5><p>המערכת האנליטית מנתחת את המתרחש.</p></div></div>
-            <div class="col-md"><div class="step-card"><div class="step-num">2</div><div class="fs-1 mb-3">🧠</div><h5 class="fw-bold">ה-AI מאמת את האירוע</h5><p>ומסווג את רמת הסיכון.</p></div></div>
-            <div class="col-md"><div class="step-card"><div class="step-num">3</div><div class="fs-1 mb-3">🔔</div><h5 class="fw-bold">מוקד מקבל התראה</h5><p>בזמן אמת למוקד המבצעי.</p></div></div>
-            <div class="col-md"><div class="step-card"><div class="step-num">4</div><div class="fs-1 mb-3">📣</div><h5 class="fw-bold">נציג המוקד מבצע כריזה</h5><p>מיידית מרחוק לאזור האירוע.</p></div></div>
-            <div class="col-md"><div class="step-card"><div class="step-num">5</div><div class="fs-1 mb-3">🛡️</div><h5 class="fw-bold">במידת הצורך</h5><p>נשלח סיור / משטרה.</p></div></div>
-          </div>
-
-          <h2 class="text-center fw-black my-5">למי זה מתאים?</h2>
-          <div class="row g-3">
-            <div class="col-6 col-md"><div class="target-card">🏭<br>מפעלים</div></div>
-            <div class="col-6 col-md"><div class="target-card">🏗️<br>אתרי בנייה</div></div>
-            <div class="col-6 col-md"><div class="target-card">🏬<br>מרכזים לוגיסטיים</div></div>
-            <div class="col-6 col-md"><div class="target-card">🚗<br>חניונים</div></div>
-            <div class="col-6 col-md"><div class="target-card">🏘️<br>קיבוצים ומושבים</div></div>
-            <div class="col-6 col-md"><div class="target-card">🏫<br>בתי ספר</div></div>
-            <div class="col-6 col-md"><div class="target-card">🛍️<br>עסקים מסחריים</div></div>
-          </div>
-        </div>
+      <h2 class="section-title">יכולות המערכת</h2>
+      <div class="row g-3">
+        <div class="col-6 col-md-3"><div class="cap-card card-soft"><div class="cap-icon">🧍</div>זיהוי נפילה של אדם</div></div>
+        <div class="col-6 col-md-3"><div class="cap-card card-soft"><div class="cap-icon">👥</div>זיהוי התקהלות חריגה</div></div>
+        <div class="col-6 col-md-3"><div class="cap-card card-soft"><div class="cap-icon">🚶</div>זיהוי שוטטות חשודה</div></div>
+        <div class="col-6 col-md-3"><div class="cap-card card-soft"><div class="cap-icon">🚧</div>זיהוי פריצה לשטח אסור</div></div>
+        <div class="col-6 col-md-3"><div class="cap-card card-soft"><div class="cap-icon">🔥</div>זיהוי עשן ואש</div></div>
+        <div class="col-6 col-md-3"><div class="cap-card card-soft"><div class="cap-icon">💼</div>זיהוי חפץ חשוד</div></div>
+        <div class="col-6 col-md-3"><div class="cap-card card-soft"><div class="cap-icon">🚗</div>זיהוי רכב באזור אסור</div></div>
+        <div class="col-6 col-md-3"><div class="cap-card card-soft"><div class="cap-icon">🚪</div>זיהוי פתיחת דלת חריגה</div></div>
       </div>
+    </div>
+  </section>
+
+  <section class="py-3 py-lg-5">
+    <div class="container-fluid px-lg-5">
+      <h2 class="section-title">למה זה משנה לעסק שלכם?</h2>
+      <div class="row g-3">
+        <div class="col-6 col-lg-3"><div class="benefit-card card-soft"><div class="benefit-icon">⚡</div><h5 class="fw-black">תגובה מיידית</h5><p class="mb-0 text-muted">התראה בזמן אמת למוקד המבצעי.</p></div></div>
+        <div class="col-6 col-lg-3"><div class="benefit-card card-soft"><div class="benefit-icon">🛡️</div><h5 class="fw-black">מניעת אירועים</h5><p class="mb-0 text-muted">פעולה לפני שהאירוע מתפתח.</p></div></div>
+        <div class="col-6 col-lg-3"><div class="benefit-card card-soft"><div class="benefit-icon">₪</div><h5 class="fw-black">חיסכון בעלויות</h5><p class="mb-0 text-muted">הפחתת תלות בשמירה פיזית מלאה.</p></div></div>
+        <div class="col-6 col-lg-3"><div class="benefit-card card-soft"><div class="benefit-icon">✅</div><h5 class="fw-black">שקט נפשי</h5><p class="mb-0 text-muted">מוקד פעיל 24/7 עם בקרה אנושית.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-3 py-lg-5" id="lead">
+    <div class="container">
+      <form class="lead-form card-soft" action="https://formspree.io/f/mwvjawag" method="POST">
+        <input type="hidden" name="source_page" value="AI Security+">
+        <h2 class="fw-black text-center mb-2">רוצים לראות איך זה עובד?</h2>
+        <p class="text-center text-muted mb-4">השאירו פרטים ונחזור אליכם להדגמה ללא התחייבות.</p>
+        <div class="row g-3">
+          <div class="col-md-6"><input class="form-control" name="name" required placeholder="שם מלא"></div>
+          <div class="col-md-6"><input class="form-control" name="phone" type="tel" inputmode="tel" required placeholder="טלפון"></div>
+          <div class="col-md-6"><input class="form-control" name="email" type="email" placeholder="אימייל"></div>
+          <div class="col-md-6">
+            <select class="form-select" name="business_type">
+              <option value="">סוג עסק / ארגון</option>
+              <option>מפעל</option>
+              <option>מרכז לוגיסטי</option>
+              <option>אתר בנייה</option>
+              <option>בית ספר / מוסד</option>
+              <option>חניון</option>
+              <option>קיבוץ / מושב</option>
+              <option>עסק מסחרי</option>
+              <option>אחר</option>
+            </select>
+          </div>
+          <div class="col-12"><textarea class="form-control" name="message" rows="4" placeholder="מה חשוב לכם לאבטח?"></textarea></div>
+          <div class="col-12"><button class="send-btn" type="submit">שלחו לי פרטים ←</button></div>
+        </div>
+      </form>
     </div>
   </section>
 </main>
 
-<a class="float-wa" href="https://wa.me/97246424111" target="_blank" rel="noopener">💬 צור קשר</a>
+<div class="floating-actions">
+  <a class="wa" href="https://wa.me/97246424111" target="_blank" rel="noopener">וואטסאפ</a>
+  <a class="call" href="tel:046424111">חייגו</a>
+</div>
+
+<footer>
+  ש.א.ש אבטחה ושמירה · מוקד וסיור 24/7 · 1-700-707-111
+</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../script.js"></script>
