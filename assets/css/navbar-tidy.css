@@ -1,0 +1,25 @@
+
+/* --- Navbar polish: tidy spacing, typography, alignment --- */
+.navbar.fixed-top.bg-white.shadow-sm.border-bottom {
+  border-bottom-color: rgba(0,0,0,.06) !important;
+}
+.navbar .navbar-brand img { height: 40px; width: auto; }
+.navbar .nav-link {
+  padding: .5rem .75rem;
+  font-weight: 600;
+  color: #1b1b1b;
+}
+.navbar .nav-link:hover { color: #e53935; }
+.navbar .dropdown-menu {
+  border-radius: 12px;
+  box-shadow: 0 8px 22px rgba(0,0,0,.12);
+  border: 1px solid rgba(0,0,0,.06);
+}
+.navbar .dropdown-item { padding: .45rem .9rem; }
+.navbar .dropdown-item:hover { background: rgba(229,57,53,.06); }
+.navbar .navbar-nav { gap: .25rem; }
+.navbar .btn-whatsapp-icon { margin-inline-start: .35rem; }
+@media (max-width: 991.98px){
+  .navbar .nav-link { padding: .45rem .65rem; font-weight: 600; }
+  .navbar .navbar-brand img { height: 36px; }
+}
